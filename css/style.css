@@ -1,0 +1,69 @@
+/* 全体の背景設定 */
+body {background-image: url('../images/your-background-image.jpg'); /* 背景画像を指定してください */
+    background-size: cover;
+    background-attachment: fixed;
+    color: #333;
+    font-family: Arial, sans-serif;
+    margin: 0;}
+
+/* ヘッダーとボタン */
+header {background-color: rgba(44, 62, 80, 0.9);
+    color: white;
+    text-align: center;
+    padding: 20px 0;}
+
+button {background-color: #7f8c8d;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;}
+
+/* ヒーローセクション（上部の横長の箱） */
+.hero-box { background-color: rgba(255, 255, 255, 0.8);
+    margin: 20px auto;
+    padding: 20px;
+    width: 90%;
+    border-radius: 10px;}
+
+/* 3カラムレイアウト */
+.column-container {display: flex;
+    justify-content: space-around;
+    width: 95%;
+    margin: 0 auto;}
+
+.info-column {background-color: rgba(255, 255, 255, 0.8);
+    flex: 1; /* 3つの列を均等な幅にする */
+    margin: 10px;
+    padding: 20px;
+    border-radius: 10px;}
+
+/* フッター */
+footer {background-color: rgba(255, 255, 255, 0.7);
+    padding: 20px;
+    text-align: center;
+    margin-top: 20px;}
+
+/* --- スタッフページのレイアウト設定 --- */
+
+/* スタッフ一人分の情報のまとまり */
+.staff-member {display: flex;            /* 横並びにする */
+    align-items: center;      /* 上下中央に揃える */
+    justify-content: space-around; /* 左右に程よく広げる */
+    padding: 30px;
+    margin: 20px auto;
+    max-width: 1000px;
+    background-color: #ffffff; /* 箱を白くして背景から浮かせる */
+    border-radius: 12px;}
+
+/* 画像のサイズ調整 */
+.staff-member img {width: 400px;             /* 横幅を指定 */
+    height: auto;
+    border-radius: 8px;}
+
+/* 2番目のスタッフ（偶数番目）だけ、左右を逆にする魔法のコード */
+.staff-member:nth-of-type(even) {flex-direction: row-reverse;}
+
+/* 紹介文のエリア */
+.bio-text {flex: 1;
+    padding: 20px;}
