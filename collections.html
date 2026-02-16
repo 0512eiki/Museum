@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Collections | Museum of Cultural Memory</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .collection-section {
+            margin-top: 40px;
+        }
+        
+        .collection-nav {
+            text-align: center;
+            margin: 30px 0;
+        }
+        
+        .collection-nav button {
+            background-color: #5a7a8c;
+            color: white;
+            padding: 10px 20px;
+            margin: 0 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        
+        .collection-nav button:hover {
+            background-color: #3d5563;
+        }
+        
+        .artifact {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 40px;
+            margin-bottom: 60px;
+            align-items: start;
+            padding: 30px;
+            background-color: #f5f5f5;
+            border-radius: 8px;
+        }
+        
+        .artifact img {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            grid-row: 1 / -1;
+        }
+        
+        .artifact-data {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        
+        .artifact-field {
+            background: white;
+            padding: 12px;
+            border-radius: 5px;
+            border-left: 3px solid #5a7a8c;
+            font-size: 13px;
+        }
+        
+        .artifact-field strong {
+            color: #1a2a3a;
+            display: block;
+            margin-bottom: 5px;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 700;
+        }
+        
+        .artifact-field p {
+            margin: 0;
+            color: #333;
+            line-height: 1.4;
+            font-size: 13px;
+        }
+        
+        .artifact h2 {
+            grid-column: 1 / -1;
+            color: #1a2a3a;
+            border-bottom: 2px solid #5a7a8c;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+        
+        .ai-disclosure {
+            background-color: #e8f4f8;
+            border: 2px solid #5a7a8c;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 40px 0;
+            text-align: center;
+            font-style: italic;
+            color: #1a2a3a;
+            line-height: 1.6;
+        }
+        
+        @media (max-width: 768px) {
+            .artifact {
+                grid-template-columns: 1fr;
+            }
+            
+            .artifact-data {
+                grid-template-columns: 1fr;
+            }
+            
+            .collection-nav button {
+                display: block;
+                width: 100%;
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Museum of Cultural Memory</h1>
+        <nav>
+            <button onclick="location.href='../index.html'">Home</button>
+            <button onclick="location.href='staff.html'">Staff</button>
+            <button onclick="location.href='collections.html'">Collections</button>
+            <button onclick="location.href='shop.html'">Shop</button>
+            <button onclick="location.href='cart.html'">View Cart</button>
+        </nav>
+    </header>
+
+    <main>
+        <div class="collection-nav">
+            <button onclick="showSection('archaeology')">Archaeology</button>
+            <button onclick="showSection('anthropology')">Anthropology</button>
+        </div>
+
+        <div class="ai-disclosure">
+            The content in this gallery was entirely created by AI under human direction. It was then curated, reviewed and edited by a human before being published.
+        </div>
+
+        <!-- ARCHAEOLOGY SECTION -->
+        <section id="archaeology" class="collection-section">
+            <h1 style="text-align: center; color: #1a2a3a; border-bottom: 3px solid #5a7a8c; padding-bottom: 15px;">Archaeology</h1>
+
+            <!-- Artifact 1: Obsidian Spearhead -->
+            <div class="artifact">
+                <img src="../images/collections/obsidian-spearhead.png" alt="Obsidian spearhead with flaked edges and sharp point, displayed on tan background">
+                <div class="artifact-data">
+                    <h2>Obsidian Spearhead</h2>
+                    <div class="artifact-field">
+                        <strong>Material</strong>
+                        <p>Volcanic glass (obsidian) with sharp edges from pressure flaking</p>
+                    </div>
+                    <div class="artifact-field">
+                        <strong>Size / Weight / Shape</strong>
+                        <p>18 cm long, leaf-shaped, 230 grams, symmetrical blade with pointed tip</p>
+                    </div>
+                    <div class="artifact-field">
+                        <strong>Estimated Age</strong>
+                        <p>~12,000 years (Late Paleolithic, inferred from associated organic material)</p>
+                    </div>
+                    <div class="artifact-field">
+                        <strong>Preservation State</strong>
+                        <p>Complete, edge intact, tip slightly chipped from impact or post-depositional damage</p>
+                    </div>
+                    <div class="artifact-field">
+                        <strong>Location Found</strong>
+                        <p>Ash-layer midden, Grotto A-7, Vaktari Highlands (42.9981°N, 19.4912°E)</p>
+                    </div>
+                    <div class="artifact-field">
+                        <strong>Likely Purpose</strong>
+                        <p>Hunting weapon; projectile point for spear or atlatl</p>
+                    </div>
+                    <div class="artifact-field">
+                        <strong>Evidence of Use</strong>
+                        <p>Microscopic traces of dried blood and feather fragments along edges; hafting wear marks on base</p>
+                    </div>
+                    <div class="artifact-field">
+                        <strong>Manufacture Clues</strong>
+                        <p>Precision flaking, symmetrical knapping, reverse edge burnishing; evidence of controlled heat treatment</p>
+                    </div>
+                    <div class="artifact-field">
+                        <strong>Found With</strong>
+                        <p>Charred bird bones, burnt ochre pigment, stone fire hearth, flint chips</p>
+                    </div>
+                    <div class="artifact-field">
+                        <strong>Burial or Habitat Context</strong>
+                        <p>Ash-layer midden associated with seasonal hunting camp; evidence of rapid ash burial suggesting volcanic event</p>
+                    </div>
+                    <div class="artifact-field">
+                        <strong>Symbolism</strong>
+                        <p>Spiral engraving on base suggests ritual significance; possibly tied to wind or hunting mythology</p>
+                    </div>
+                    <div class="artifact-field">
+                        <strong>Comparison</strong>
+                        <p>Nearly identical blade found at Site B-2, but without spiral engraving; similar to Solutrean laurel-leaf points</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Artifact 2: Marker Arch Fragment -->
+            <div class="artifact">
+                <img src="../images/collections/marker-arch.png" alt="Dense stone arch fragment with ritual carvings, displayed on dark background">
+                <div class="artifact-data">
+                    <h2>Marker Arch Fragment</h2>
+                    <div class="artifact-field">
+                        <strong>Material</strong>
+                        <p>Dense composite stone (volcanic basalt, lunar silicate, fused ash)</p>
+                    </div>
+                    <div class="artifact-field">
+                        <strong>Size / Weight / Shape</strong>
+                        <p>2.3 m high remaining segment, partial arc with tapering base, 1.4 metric tons</p>
+                    </div>
+                    <div class="artifact-field">
+                        <strong>Estimated Age</strong>
+                        <p>~22,000 years (contextual—charcoal flecks and weathering strata)</p>
+                    </div>
+                    <div class="artifact-field">
+                        <strong>Preservation State</strong>
+                        <p>Lower right third of original arch remains; inscription field partially intact</p>
+                    </div>
+                    <div class="artifact-field">
+                        <strong>Location Found</strong>
+                        <p>Erosion-cleared ridgeline above Basin 47-E, Dorsai Scarp; adjacent to ceremonial fire pits</p>
+                    </div>
+                    <div class="artifact-field">
+                        <strong>Likely Purpose</strong>
+                        <p>Ceremonial or calendrical archway; hypothesized as seasonal sightline or passage marker</p>
+                    </div>
+                    <div class="artifact-field">
+                        <strong>Evidence of Use</strong>
+                        <p>Polished threshold stone and soot traces beneath arch; suggest ritual procession and burning rites</p>
+                    </div>
+                    <div class="artifact-field">
+                        <strong>Manufacture Clues</strong>
+                        <p>Precision jointing, angle-carved keystone, symbol array follows 7-point symmetrical logic</p>
+                    </div>
+                    <div class="artifact-field">
+                        <strong>Found With</strong>
+                        <p>Burnt charcoal flecks, obsidian bead fragments, and crushed pigment near foundation</p>
+                    </div>
+                    <div class="artifact-field">
+                        <strong>Burial or Habitat Context</strong>
+                        <p>Buried beneath windblown basalt and sediment; ridge stabilized by ancient stonework</p>
+                    </div>
+                    <div class="artifact-field">
+                        <strong>Symbolism</strong>
+                        <p>Spiral and nested triangle motifs possibly related to celestial alignment or void traversal myths</p>
+                    </div>
+                    <div class="artifact-field">
+                        <strong>Comparison</strong>
+                        <p>Geometrically similar to standing stone gates at Aetha-Zul, but with finer symbolic work</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Artifact 3: Basalt Blade -->
+            <div class="artifact">
+                <img src="../images/collections/basalt-blade.png" alt="Basalt blade tool with flaked cutting edge and wear marks">
+                <div class="artifact-data">
+                    <h2>Basalt Blade</h2>
+                    <div class="artifact-field">
+                        <strong>Material</strong>
+                        <p>Volcanic basalt with micro-crystalline structure; natural fracture planes optimized for blade extraction</p>
+                    </div>
+                    <div class="artifact-field">
+                        <strong>Size / Weight / Shape</strong>
+                        <p>15 cm long, 7 cm wide, curved crescent shape, ~400 grams; asymmetrical cutting edge</p>
+                    </div>
+                    <div class="artifact-field">
+                        <strong>Estimated Age</strong>
+                        <p>~18,000 years (associated with charcoal layer radiocarbon dating)</p>
+                    </div>
+                    <div class="artifact-field">
+                        <strong>Preservation State</strong>
+                        <p>Partial, distal phalanges missing, spiral ridge well-preserved; biological origin confirmed</p>
+                    </div>
+                    <div class="artifact-field">
+                        <strong>Location Found</strong>
+                        <p>Compressed silt layer, low-oxygen sediment trap; Ravik Crater Badlands, Sector Theta-9</p>
+                    </div>
+                    <div class="artifact-field">
+                        <strong>Likely Purpose</strong>
+                        <p>Grasping or tearing appendage of a predatory species; tool for cutting or processing</p>
+                    </div>
+                    <div class="artifact-field">
+                        <strong>Evidence of Use</strong>
+                        <p>Ridge polish from contact use; biological origin confirmed through microscopic inspection</p>
+                    </div>
+                    <div class="artifact-field">
+                        <strong>Manufacture Clues</strong>
+                        <p>Natural spiral ridges; biological origin confirmed, crafting method unknown</p>
+                    </div>
+                    <div class="artifact-field">
+                        <strong>Found With</strong>
+                        <p>Vertebral fragments, shell shards, calcified flora from riparian deposit</p>
+                    </div>
+                    <div class="artifact-field">
+                        <strong>Burial or Habitat Context</strong>
+                        <p>Laminated silt basin; low-oxygen conditions enabled preservation of soft organic remains</p>
+                    </div>
+                    <div class="artifact-field">
+                        <strong>Symbolism</strong>
+                        <p>Spiral shape echoes life/death duality in later cultures; possibly life/death duality in later cultures</p>
+                    </div>
+                    <div class="artifact-field">
+                        <strong>Comparison</strong>
+                        <p>Morphological cousin to Xenthrop Raptorial Claws (~80% larger); similar species inferred</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ANTHROPOLOGY SECTION -->
+        <section id="anthropology" class="collection-section" style="display:none;">
+            <h1 style="text-align: center; color: #1a2a3a; border-bottom: 3px solid #5a7a8c; padding-bottom: 15px;">Anthropology</h1>
+
+            <!-- Artifact 4: Spiral Claw Fossil -->
+            <div class="artifact">
+                <img src="../images/collections/spiral-claw.png" alt="Fossilized spiral claw with intricate ribbed patterns and curved shape">
+                <div class="artifact-data">
+                    <h2>Spiral Claw Fossil</h2>
+                    <div class="artifact-field">
+                        <strong>Material</strong>
+                        <p>Fossilized bone and mineral composite with silica encrustation; biological origin confirmed</p>
+                    </div>
+                    <div class="artifact-field">
+                        <strong>Size / Weight / Shape</strong>
+                        <p>32 cm long, curved crescent shape, ~2.4 kg; grotesquely anthropomorphic cephalopod-like head crest</p>
+                    </div>
+                    <div class="artifact-field">
+                        <strong>Estimated Age</strong>
+                        <p>Unknown; core dating failed due to anomalous magnetism and crystalline occlusion</p>
+                    </div>
+                    <div class="artifact-field">
+                        <strong>Preservation State</strong>
+                        <p>Perfect—no signs of erosion, biofouling, or decay despite trench conditions</p>
+                    </div>
+                    <div class="artifact-field">
+                        <strong>Location Found</strong>
+                        <p>Hadopelagic Zone, Kaer thul Rift (Depth: 10,930 meters); lodged upright in pillow lava shelf</p>
+                    </div>
+                    <div class="artifact-field">
+                        <strong>Likely Purpose</strong>
+                        <p>Cult object or "guardian marker"; associated with deep ritual axis or binding</p>
+                    </div>
+                    <div class="artifact-field">
+                        <strong>Evidence of Use</strong>
+                        <p>None conclusive; some coral alignment nearby appears intentional, possibly reverential</p>
+                    </div>
+                    <div class="artifact-field">
+                        <strong>Manufacture Clues</strong>
+                        <p>Carving method unknown; microscopic inspection reveals no tool marks—edges appear molecularly shared</p>
+                    </div>
+                    <div class="artifact-field">
+                        <strong>Found With</strong>
+                        <p>Radiating stone shards, invertebrate fossil spiral rings, shattered shell perimeter</p>
+                    </div>
+                    <div class="artifact-field">
+                        <strong>Burial or Habitat Context</strong>
+                        <p>Isolated on shelf ledge; zero current activity or movement, position appears intentional</p>
+                    </div>
+                    <div class="artifact-field">
+                        <strong>Symbolism</strong>
+                        <p>Tentacle-fold geometry encodes non-Euclidian script; eye cluster resembles bioaccoustic receptors</p>
+                    </div>
+                    <div class="artifact-field">
+                        <strong>Comparison</strong>
+                        <p>Echoes mythic figures from submerged iconography in the drowned vaults of Y'ha-neth; unknown culture</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Artifact 5: Carved Bone Ornament -->
+            <div class="artifact">
+                <img src="../images/collections/bone-ornament.png" alt="Intricately carved bone ornament with geometric patterns and symbolic etchings">
+                <div class="artifact-data">
+                    <h2>Carved Bone Ornament</h2>
+                    <div class="artifact-field">
+                        <strong>Material</strong>
+                        <p>Fossilized bone and mineral sediment; partial soft tissue impressions visible on inner face</p>
+                    </div>
+                    <div class="artifact-field">
+                        <strong>Size / Weight / Shape</strong>
+                        <p>12 cm diameter, circular pendant with central perforation; 180 grams; ~3 mm thickness</p>
+                    </div>
+                    <div class="artifact-field">
+                        <strong>Estimated Age</strong>
+                        <p>~41 million years (radiometric dating); context suggests Eocene epoch origin</p>
+                    </div>
+                    <div class="artifact-field">
+                        <strong>Preservation State</strong>
+                        <p>Partial, distal phalanges missing; spiral ridge well-preserved; biological origin confirmed</p>
+                    </div>
+                    <div class="artifact-field">
+                        <strong>Location Found</strong>
+                        <p>Ravik Crater Badlands, Sector Theta-9; compressed silt layer, low-oxygen sediment trap</p>
+                    </div>
+                    <div class="artifact-field">
+                        <strong>Likely Purpose</strong>
+                        <p>Personal adornment or ritual pendant; central hole suggests suspension or wearing on cord</p>
+                    </div>
+                    <div class="artifact-field">
+                        <strong>Evidence of Use</strong>
+                        <p>Wear patterns around perforation; polished edges suggest friction from repeated handling</p>
+                    </div>
+                    <div class="artifact-field">
+                        <strong>Manufacture Clues</strong>
+                        <p>Hand-carved with stone tool; beveled edge and relief work show advanced artistic technique</p>
+                    </div>
+                    <div class="artifact-field">
+                        <strong>Found With</strong>
+                        <p>Charred bone fragments, ochre dust, shell beads, woven fiber impressions in clay</p>
+                    </div>
+                    <div class="artifact-field">
+                        <strong>Burial or Habitat Context</strong>
+                        <p>Cache deposit within residential hearth area; associated with burial ritual or valued heirloom</p>
+                    </div>
+                    <div class="artifact-field">
+                        <strong>Symbolism</strong>
+                        <p>Spiral and concentric circle motifs; symbol of life/death duality or cyclical time concept</p>
+                    </div>
+                    <div class="artifact-field">
+                        <strong>Comparison</strong>
+                        <p>Echoes design aesthetic of later Paleolithic "Venus" figurines and geometric abstraction traditions</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Artifact 6: Ceremonial Vessel -->
+            <div class="artifact">
+                <img src="../images/collections/ceremonial-vessel.png" alt="Terracotta ceremonial vessel with geometric patterns and symbolic decorations">
+                <div class="artifact-data">
+                    <h2>Ceremonial Vessel</h2>
+                    <div class="artifact-field">
+                        <strong>Material</strong>
+                        <p>Hand-thrown terracotta with fine-grit mineral temper; pigment residue suggests natural dye use</p>
+                    </div>
+                    <div class="artifact-field">
+                        <strong>Size / Weight / Shape</strong>
+                        <p>28 cm tall, 22 cm diameter mouth, bulbous body with pedestal base; 2.1 kg when dry</p>
+                    </div>
+                    <div class="artifact-field">
+                        <strong>Estimated Age</strong>
+                        <p>~7,500 years (Neolithic, thermoluminescence dating of clay core)</p>
+                    </div>
+                    <div class="artifact-field">
+                        <strong>Preservation State</strong>
+                        <p>Partial reconstruction (approx. 60% original); minor lip damage, hairline cracks in base</p>
+                    </div>
+                    <div class="artifact-field">
+                        <strong>Location Found</strong>
+                        <p>Central ceremonial mound, Sector Delta-12; burial context within wattle-daub structure foundation</p>
+                    </div>
+                    <div class="artifact-field">
+                        <strong>Likely Purpose</strong>
+                        <p>Ritual libation or food offering vessel; interior residue suggests aqueous or fermented contents</p>
+                    </div>
+                    <div class="artifact-field">
+                        <strong>Evidence of Use</strong>
+                        <p>Interior staining from organic matter; blackening from ritual fire exposure; handling wear on rim</p>
+                    </div>
+                    <div class="artifact-field">
+                        <strong>Manufacture Clues</strong>
+                        <p>Hand-coiled construction with finger-smoothed walls; slip-painted designs applied before firing</p>
+                    </div>
+                    <div class="artifact-field">
+                        <strong>Found With</strong>
+                        <p>Charred grain husks, bone awls, red ochre powder, and juvenile human remains (symbolic placement)</p>
+                    </div>
+                    <div class="artifact-field">
+                        <strong>Burial or Habitat Context</strong>
+                        <p>Deposit within primary ceremonial context; appears intentionally broken and placed as ritual offering</p>
+                    </div>
+                    <div class="artifact-field">
+                        <strong>Symbolism</strong>
+                        <p>Geometric patterns echo celestial motifs; vessel form suggests transformation or containment symbolism</p>
+                    </div>
+                    <div class="artifact-field">
+                        <strong>Comparison</strong>
+                        <p>Design parallels Cucuteni-Tripolye pottery traditions; possible evidence of long-distance cultural contact</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <hr>
+        <p>This is a fictitious website created purely for academic purposes.</p>
+        <p>The content and images on this site were conceived by a human and created by AI. The images were created by AI and curated, edited, reviewed, verified, validated, and augmented by a human.</p>
+    </footer>
+
+    <script>
+        function showSection(section) {
+            const sections = document.querySelectorAll('.collection-section');
+            sections.forEach(s => s.style.display = 'none');
+            document.getElementById(section).style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>
