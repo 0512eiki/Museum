@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Cart | Museum of Cultural Memory</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Museum of Cultural Memory</h1>
+        <nav>
+            <button onclick="location.href='../index.html'">Home</button>
+            <button onclick="location.href='staff.html'">Staff</button>
+            <button onclick="location.href='collections.html'">Collections</button>
+            <button onclick="location.href='shop.html'">Shop</button>
+            <button onclick="location.href='cart.html'">View Cart</button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero-box">
+            <h2>Shopping Cart</h2>
+            <p>Review your items, apply your member discount, and finalize your totals.</p>
+        </section>
+
+        <section class="cart-controls">
+            <label class="member-toggle">
+                <input type="checkbox" id="memberDiscount">
+                Apply Member Discount (15%)
+            </label>
+            <div class="cart-actions">
+                <button id="clearCart" class="secondary-btn">Clear Cart</button>
+                <button onclick="location.href='shop.html'" class="secondary-btn">Keep Shopping</button>
+            </div>
+        </section>
+
+        <section id="cartContainer" class="cart-container"></section>
+
+        <section class="summary-box">
+            <h3>Order Summary</h3>
+            <div id="summaryContainer" class="summary-list"></div>
+        </section>
+    </main>
+
+    <script src="../js/cart.js"></script>
+</body>
+</html>
