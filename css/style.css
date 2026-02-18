@@ -113,3 +113,113 @@ footer {background-color: rgba(255, 255, 255, 0.7);
 .summary-list{ display:flex; flex-direction:column; gap:8px; }
 .summary-row{ display:flex; justify-content:space-between; }
 .summary-row.total{ font-weight:700; border-top:1px solid #ddd; padding-top:10px; }
+
+/* --- Collections page styles --- */
+.collection-section { margin-top: 40px; }
+
+.collection-nav { text-align: center; margin: 30px 0; }
+
+.collection-nav button {
+    background-color: #5a7a8c;
+    color: white;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.collection-nav button:hover { background-color: #3d5563; }
+
+.artifact {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 40px;
+    margin-bottom: 60px;
+    align-items: start;
+    padding: 30px;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+}
+
+.artifact img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    grid-row: 1 / -1;
+    cursor: pointer;
+}
+
+.artifact-data { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+
+.artifact-field {
+    background: white;
+    padding: 12px;
+    border-radius: 5px;
+    border-left: 3px solid #5a7a8c;
+    font-size: 13px;
+}
+
+.artifact-field strong {
+    color: #1a2a3a;
+    display: block;
+    margin-bottom: 5px;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 700;
+}
+
+.artifact-field p { margin: 0; color: #333; line-height: 1.4; font-size: 13px; }
+
+.artifact h2 {
+    grid-column: 1 / -1;
+    color: #1a2a3a;
+    border-bottom: 2px solid #5a7a8c;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.ai-disclosure {
+    background-color: #e8f4f8;
+    border: 2px solid #5a7a8c;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 40px 0;
+    text-align: center;
+    font-style: italic;
+    color: #1a2a3a;
+    line-height: 1.6;
+}
+
+.modal-instruction { text-align: center; font-style: italic; color: #1a2a3a; margin: -10px 0 30px; }
+
+@media (max-width: 768px) {
+    .artifact { grid-template-columns: 1fr; }
+    .artifact-data { grid-template-columns: 1fr; }
+    .collection-nav button { display: block; width: 100%; margin: 10px 0; }
+}
+
+/* Modal styles for Collections */
+.modal { position: fixed; inset: 0; background: rgba(0,0,0,0.55); display: none; align-items: center; justify-content: center; z-index: 9999; }
+.modal-content { background: #efe3d1; max-width: 860px; width: 90%; padding: 20px 26px; border-radius: 10px; position: relative; box-shadow: 0 12px 30px rgba(0,0,0,0.4); }
+.close-modal { position: absolute; right: 16px; top: 12px; border: none; background: transparent; font-size: 18px; cursor: pointer; }
+#modal-body h2 { margin-top: 0; }
+.modal-meta { margin-bottom: 12px; }
+.modal-meta p { margin: 4px 0; }
+
+/* Histories layout */
+.history-title { text-align: center; color: #1a2a3a; border-bottom: 3px solid #5a7a8c; padding-bottom: 15px; }
+.history-item { display: grid; grid-template-columns: 280px 1fr; gap: 30px; background: #f5f5f5; padding: 24px; border-radius: 10px; margin-bottom: 28px; }
+.history-image { width: 100%; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+.history-content h2 { margin-top: 0; }
+.history-content h3 { margin-top: 16px; }
+.history-back { text-align: center; margin: 20px 0 40px; }
+@media (max-width: 900px) {
+    .history-item { grid-template-columns: 1fr; }
+}

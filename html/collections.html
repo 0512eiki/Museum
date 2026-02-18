@@ -5,120 +5,6 @@
     <meta name="robots" content="noindex, nofollow">
     <title>Collections | Museum of Cultural Memory</title>
     <link rel="stylesheet" href="../css/style.css">
-    <style>
-        .collection-section {
-            margin-top: 40px;
-        }
-        
-        .collection-nav {
-            text-align: center;
-            margin: 30px 0;
-        }
-        
-        .collection-nav button {
-            background-color: #5a7a8c;
-            color: white;
-            padding: 10px 20px;
-            margin: 0 10px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-            font-weight: bold;
-            transition: background-color 0.3s;
-        }
-        
-        .collection-nav button:hover {
-            background-color: #3d5563;
-        }
-        
-        .artifact {
-            display: grid;
-            grid-template-columns: 300px 1fr;
-            gap: 40px;
-            margin-bottom: 60px;
-            align-items: start;
-            padding: 30px;
-            background-color: #f5f5f5;
-            border-radius: 8px;
-        }
-        
-        .artifact img {
-            width: 100%;
-            max-width: 300px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            grid-row: 1 / -1;
-        }
-        
-        .artifact-data {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-        }
-        
-        .artifact-field {
-            background: white;
-            padding: 12px;
-            border-radius: 5px;
-            border-left: 3px solid #5a7a8c;
-            font-size: 13px;
-        }
-        
-        .artifact-field strong {
-            color: #1a2a3a;
-            display: block;
-            margin-bottom: 5px;
-            font-size: 12px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            font-weight: 700;
-        }
-        
-        .artifact-field p {
-            margin: 0;
-            color: #333;
-            line-height: 1.4;
-            font-size: 13px;
-        }
-        
-        .artifact h2 {
-            grid-column: 1 / -1;
-            color: #1a2a3a;
-            border-bottom: 2px solid #5a7a8c;
-            padding-bottom: 10px;
-            margin-bottom: 15px;
-            font-size: 20px;
-        }
-        
-        .ai-disclosure {
-            background-color: #e8f4f8;
-            border: 2px solid #5a7a8c;
-            padding: 20px;
-            border-radius: 8px;
-            margin: 40px 0;
-            text-align: center;
-            font-style: italic;
-            color: #1a2a3a;
-            line-height: 1.6;
-        }
-        
-        @media (max-width: 768px) {
-            .artifact {
-                grid-template-columns: 1fr;
-            }
-            
-            .artifact-data {
-                grid-template-columns: 1fr;
-            }
-            
-            .collection-nav button {
-                display: block;
-                width: 100%;
-                margin: 10px 0;
-            }
-        }
-    </style>
 </head>
 <body>
 
@@ -137,11 +23,14 @@
         <div class="collection-nav">
             <button onclick="showSection('archaeology')">Archaeology</button>
             <button onclick="showSection('anthropology')">Anthropology</button>
+            <button onclick="showSection('histories')">Histories</button>
         </div>
 
         <div class="ai-disclosure">
             The content in this gallery was entirely created by AI under human direction. It was then curated, reviewed and edited by a human before being published.
         </div>
+
+        <p class="modal-instruction">Click any artifact image to view its interpretation modal.</p>
 
         <!-- ARCHAEOLOGY SECTION -->
         <section id="archaeology" class="collection-section">
@@ -149,7 +38,7 @@
 
             <!-- Artifact 1: Obsidian Spearhead -->
             <div class="artifact">
-                <img src="../images/collections/obsidian-spearhead.png" alt="Obsidian spearhead with flaked edges and sharp point, displayed on tan background">
+                <img src="../images/collections/obsidian-spearhead.png" alt="Obsidian spearhead with flaked edges and sharp point, displayed on tan background" class="open-modal" data-modal-target="#modal-text-obsidian-spearhead">
                 <div class="artifact-data">
                     <h2>Obsidian Spearhead</h2>
                     <div class="artifact-field">
@@ -205,7 +94,7 @@
 
             <!-- Artifact 2: Marker Arch Fragment -->
             <div class="artifact">
-                <img src="../images/collections/marker-arch.png" alt="Dense stone arch fragment with ritual carvings, displayed on dark background">
+                <img src="../images/collections/marker-arch.png" alt="Dense stone arch fragment with ritual carvings, displayed on dark background" class="open-modal" data-modal-target="#modal-text-marker-arch">
                 <div class="artifact-data">
                     <h2>Marker Arch Fragment</h2>
                     <div class="artifact-field">
@@ -261,7 +150,7 @@
 
             <!-- Artifact 3: Basalt Blade -->
             <div class="artifact">
-                <img src="../images/collections/basalt-blade.png" alt="Basalt blade tool with flaked cutting edge and wear marks">
+                <img src="../images/collections/basalt-blade.png" alt="Basalt blade tool with flaked cutting edge and wear marks" class="open-modal" data-modal-target="#modal-text-basalt-blade">
                 <div class="artifact-data">
                     <h2>Basalt Blade</h2>
                     <div class="artifact-field">
@@ -322,7 +211,7 @@
 
             <!-- Artifact 4: Spiral Claw Fossil -->
             <div class="artifact">
-                <img src="../images/collections/spiral-claw.png" alt="Fossilized spiral claw with intricate ribbed patterns and curved shape">
+                <img src="../images/collections/spiral-claw.png" alt="Fossilized spiral claw with intricate ribbed patterns and curved shape" class="open-modal" data-modal-target="#modal-text-spiral-claw">
                 <div class="artifact-data">
                     <h2>Spiral Claw Fossil</h2>
                     <div class="artifact-field">
@@ -378,7 +267,7 @@
 
             <!-- Artifact 5: Carved Bone Ornament -->
             <div class="artifact">
-                <img src="../images/collections/bone-ornament.png" alt="Intricately carved bone ornament with geometric patterns and symbolic etchings">
+                <img src="../images/collections/bone-ornament.png" alt="Intricately carved bone ornament with geometric patterns and symbolic etchings" class="open-modal" data-modal-target="#modal-text-bone-ornament">
                 <div class="artifact-data">
                     <h2>Carved Bone Ornament</h2>
                     <div class="artifact-field">
@@ -434,7 +323,7 @@
 
             <!-- Artifact 6: Ceremonial Vessel -->
             <div class="artifact">
-                <img src="../images/collections/ceremonial-vessel.png" alt="Terracotta ceremonial vessel with geometric patterns and symbolic decorations">
+                <img src="../images/collections/ceremonial-vessel.png" alt="Terracotta ceremonial vessel with geometric patterns and symbolic decorations" class="open-modal" data-modal-target="#modal-text-ceremonial-vessel">
                 <div class="artifact-data">
                     <h2>Ceremonial Vessel</h2>
                     <div class="artifact-field">
@@ -488,6 +377,135 @@
                 </div>
             </div>
         </section>
+
+        <!-- HISTORIES SECTION -->
+        <section id="histories" class="collection-section" style="display:none;">
+            <h1 class="history-title">Histories</h1>
+
+            <div class="history-item">
+                <img src="../images/collections/obsidian-spearhead.png" alt="Obsidian Spearhead on tan background" class="history-image">
+                <div class="history-content">
+                    <h2>Obsidian Spearhead</h2>
+                    <h3>Artifact Facts</h3>
+                    <p><strong>Material:</strong> Volcanic glass (obsidian) with pressure-flaked edges.</p>
+                    <p><strong>Function:</strong> Hunting weapon; projectile point for spear or atlatl.</p>
+                    <p><strong>Location Found:</strong> Ash-layer midden, Grotto A-7, Vaktari Highlands.</p>
+                    <h3>Interpretation</h3>
+                    <p>This gleaming obsidian point represents the mastery of an ancient hunter-people who lived at the edge of survival and skill, approximately 12,000 years ago in the remote Vaktari Highlands. The bilateral symmetry and precision pressure-flaking technique is no accident—it is the signature of a skilled knapper who understood how to coax a razor edge from volcanic glass, a material far more difficult to work than flint or stone. This level of craftsmanship indicates formal training and knowledge transmission across generations, suggesting a culture that invested time and resources into creating tools of exceptional quality.</p>
+                    <p>The archaeological context reveals much about the object's significance and use. Found buried in a midden—a place of discarded bone and ash near a communal hearth—this point traveled with hunters into dangerous terrain. Microscopic fractures on its tip tell of impact: the moment it struck bone, possibly from a wild boar or mountain deer. The hafting residue along its base shows that it was once bound to a wooden shaft with sinew and plant fiber, creating a composite tool of remarkable sophistication. This was not a disposable weapon; it was crafted with care and maintained for continued use.</p>
+                    <p>Most intriguingly, the presence of ochre pigment near the artifact hints at ritual significance. The rarity of obsidian in this region—requiring trade from distant volcanic zones—suggests this point was more than a utilitarian tool. It was an investment, a valued possession, and possibly invested with spiritual or ceremonial meaning. Was this point blessed before the hunt? Did the red ochre—recalling blood—hold significance in the spiritual preparation of the hunter? The combination of technical mastery, rare materials, and ritual indicators suggests a culture that understood hunting not merely as survival but as a sacred practice deserving of preparation and reverence.</p>
+                    <h3>Comparative Note</h3>
+                    <p>Spearheads of this morphology mirror the iconic Solutrean laurel-leaf points of Western Europe, created approximately 10,000 years earlier. This parallel suggests not direct cultural contact but convergent adaptation: when human populations hunt in similar landscapes facing similar prey, they independently invent similar technological solutions. The obsidian spearhead thus represents a universal principle of human innovation—the marriage of environment, resource availability, and technical need.</p>
+                    <h3>Cautionary Note on Interpretation</h3>
+                    <p>The "meaning" of this object remains grounded in what the material evidence can tell us. We infer ritual function from pigment and location, but we cannot know the specific beliefs, prayers, or spiritual practices of its makers. This ambiguity is not a weakness of archaeological interpretation; it is a reminder of the dignity of the unknown and the limits of our knowledge. All interpretations offered here are provisional and subject to revision as new evidence emerges.</p>
+                    <h3>On Display Courtesy Of</h3>
+                    <p>The Vaktari Highlands Archaeological Survey, with special gratitude to Dr. Isla Raman, Lead Field Archaeologist, and the curatorial interpretation of Dr. Francine Bowman, Cultural Historian & Storyweaver.</p>
+                </div>
+            </div>
+
+            <div class="history-item">
+                <img src="../images/collections/marker-arch.png" alt="Marker Arch Fragment on ridgeline" class="history-image">
+                <div class="history-content">
+                    <h2>Marker Arch Fragment</h2>
+                    <h3>Artifact Facts</h3>
+                    <p><strong>Material:</strong> Composite stone (basalt, lunar silicate, fused ash).</p>
+                    <p><strong>Function:</strong> Ceremonial or calendrical archway.</p>
+                    <p><strong>Location Found:</strong> Dorsai Scarp ridgeline above Basin 47-E.</p>
+                    <h3>Interpretation</h3>
+                    <p>This precision-cut fragment is all that remains of an engineered archway—a threshold between worlds—bearing witness to a 22,000-year-old culture of remarkable technical sophistication. The composite stone itself represents extraordinary knowledge: volcanic basalt, rare lunar silicate inclusions, and fused ash—materials that suggest advanced understanding of material properties and possibly ritual significance in their selection. The keystone carries a 7-point symmetrical symbol array, a carefully organized geometric system that may encode seasonal information, celestial observation points, or sacred geometry. The precision of the jointing and the angle-carved design indicate this was no simple boundary marker but an intentional monument of considerable cultural importance.</p>
+                    <p>The archaeological context deepens this interpretation. Buried beneath windblown basalt and sediment on a remote, elevated ridgeline, the structure was stabilized by a platform of ancient stonework—evidence of deliberate site preparation in a landscape where such labor investment would be substantial. Surrounding finds—burnt charcoal flecks, obsidian bead fragments, and crushed pigment near the foundation—speak eloquently of ritual activity. The evidence suggests episodic burning or offering rites, while the scattered high-value materials point to the use of rare goods in a communal gathering, procession, or passage rite associated with the archway itself.</p>
+                    <p>The artifact's elevated location, coupled with possible alignment to horizon features or celestial bodies, supports hypotheses that the archway functioned as a sightline—a marker of sacred geography where the horizontal and vertical, the earthly and celestial, converged. Who passed through this threshold? What seasons or lifecycles did it mark? The fragment guards these secrets yet speaks eloquently of a culture that did not merely settle landscapes but ceremonially transformed them, creating monuments that linked human community to the cosmic order. This is architecture as cosmology, stone as scripture.</p>
+                    <h3>Comparative Note</h3>
+                    <p>The geometry of the Marker Arch Fragment recalls the standing stone gates at Aetha-Zul (circa 17,000 BP), located at considerable distance. However, the Marker Arch Fragment distinguishes itself by its integration of locally sourced volcanic material and the exceptional precision of its jointing technique. This suggests an independent regional tradition with shared symbolic and functional concerns but distinct technological pathways and materials. The variation demonstrates how different populations, encountering similar needs for ritual and seasonal marking, develop distinctive solutions rooted in their local geography.</p>
+                    <h3>Cautionary Note on Interpretation</h3>
+                    <p>Given the fragmentary nature of the structure and the absence of associated written records or continuous living traditions, all interpretations remain grounded in material context and structural analysis. No definitive claims can be made regarding the specific cosmology, theology, or cultural identity of its builders. The symbolic meanings we propose are informed by comparative mythology and archaeological parallels, but they remain provisional. Respect is extended to the likelihood that this was a sacred or liminal site, and humility is maintained regarding the limits of our understanding across a gap of 22 millennia.</p>
+                    <h3>On Display Courtesy Of</h3>
+                    <p>The Dorsai Scarp Archaeological Survey Project, in collaboration with the Department of Archaeological Semiotics at the University of Athens, with curatorial interpretation by Dr. Francine Bowman.</p>
+                </div>
+            </div>
+
+            <div class="history-item">
+                <img src="../images/collections/basalt-blade.png" alt="Basalt Blade tool" class="history-image">
+                <div class="history-content">
+                    <h2>Basalt Blade</h2>
+                    <h3>Artifact Facts</h3>
+                    <p><strong>Material:</strong> Volcanic basalt with micro-crystalline structure.</p>
+                    <p><strong>Function:</strong> Cutting or processing tool.</p>
+                    <p><strong>Location Found:</strong> Ravik Crater Badlands, Sector Theta-9.</p>
+                    <h3>Interpretation</h3>
+                    <p>This crescent-shaped basalt blade, 15 centimeters in length and weighing approximately 400 grams, offers a window into the technological sophistication and environmental adaptation of peoples living in the Ravik Crater Badlands approximately 18,000 years ago. The material itself—volcanic basalt with micro-crystalline structure—reveals considerable geological knowledge. Basalt naturally fractures along predictable planes when struck correctly, and this blade's form suggests the maker understood and exploited these properties. This is not accidental toolmaking; it is informed geological engineering passed down through generations of observation and practice.</p>
+                    <p>The stratigraphic context of the discovery provides critical interpretive evidence. Recovered from a compressed silt layer in a low-oxygen sediment trap, the blade's preservation state is exceptional, with surface polish and edge-wear patterns still clearly visible under microscopic analysis. The associated materials—vertebral fragments, shell shards, and calcified riparian flora—paint a vivid picture of the site's use. This was not a temporary hunting camp but a sustained workshop location near water, where multiple resources (aquatic fauna, terrestrial game, plant materials) were processed. The blade's asymmetrical cutting edge and ridge polish indicate repeated use in contact-intensive tasks, likely hide-working, plant fiber preparation, or bone processing.</p>
+                    <p>The curved crescent form is not merely aesthetic but functional: it optimizes cutting leverage while providing a comfortable grip for sustained use. The artifact demonstrates an understanding of ergonomics and mechanical advantage that rivals modern tool design. Moreover, the presence of spiral ridges—though described as "natural" in field notes—has led some interpreters to explore symbolic dimensions. In later cultures across the region, spiral forms are consistently associated with cyclical concepts: life-death-rebirth, seasonal return, water flow. While we cannot project these meanings backward 18,000 years with certainty, the consistent reappearance of such forms across deep time invites speculation about persistent symbolic vocabularies rooted in observation of natural phenomena.</p>
+                    <h3>Comparative Note</h3>
+                    <p>The Basalt Blade shares morphological characteristics with stone tools from the Xenthrop Raptorial assemblage, though significantly smaller (approximately 80% reduction in size). This suggests either adaptation to different prey/materials or convergent technological evolution. Similar crescent blades appear in Late Paleolithic assemblages across Eurasia, indicating a widespread recognition of this form's effectiveness. The Ravik example is distinguished by its exceptional preservation and the richness of its associated contextual materials, making it one of the most informative specimens of its type.</p>
+                    <h3>Cautionary Note on Interpretation</h3>
+                    <p>Field analysis was conducted by Dr. Isla Raman using LiDAR mapping and 3D photogrammetry, providing high-resolution stratigraphic data. However, symbolic interpretations regarding spiral forms remain speculative. The association of spiral imagery with life-death cycles is documented in later periods and different geographic contexts; applying such interpretations retroactively across 18 millennia requires caution. All symbolic readings offered here are provisional hypotheses informed by comparative ethnography, not definitive cultural reconstructions. The blade's primary significance lies in its technological sophistication and the environmental information its context provides.</p>
+                    <h3>On Display Courtesy Of</h3>
+                    <p>The Ravik Crater Badlands Archaeological Project, with field excavation and digital documentation by Dr. Isla Raman (Lead Field Archaeologist, Oxford University), and cultural interpretation by Dr. Francine Bowman (Cultural Historian & Storyweaver).</p>
+                </div>
+            </div>
+
+            <div class="history-item">
+                <img src="../images/collections/spiral-claw.png" alt="Spiral Claw Fossil" class="history-image">
+                <div class="history-content">
+                    <h2>Spiral Claw Fossil</h2>
+                    <h3>Artifact Facts</h3>
+                    <p><strong>Material:</strong> Fossilized bone and mineral composite with silica encrustation.</p>
+                    <p><strong>Function:</strong> Cult object or guardian marker.</p>
+                    <p>Few artifacts in human history confront us more powerfully with the limits of our knowledge and understanding than this 32-centimeter claw, fossilized and perfectly preserved, retrieved from the deepest trench on Earth. Recovered from the Hadopelagic Zone at a depth of 10,930 meters, this object presents a mystery that challenges conventional archaeological interpretation. The cephalopod-like head crest, the intricate ribbed patterns, the nonhuman geometry—all suggest intentional curation and ritual placement rather than accidental deposition. It was not dropped into the abyss; it was positioned upright on a pillow-lava shelf, a gesture of deliberate, ceremonial placement.</p>
+                    <p>The dating evidence itself resists conventional analysis. Radiocarbon and radiometric methods have failed—anomalous magnetism and crystalline occlusion appear to defeat our instruments as if the object itself resists scientific classification. We are faced with uncertainty, with the possibility that this artifact exists at the boundary of our ability to measure and interpret. Yet the surrounding context speaks clearly: radiating stone shards, fossil spiral rings, and shell fragments arranged in patterns that appear intentional, suggesting ceremony in absolute darkness at the uttermost limit of the habitable world. What culture ventured to these extremes? What beliefs required the placement of such an object in such a place?</p>
+                    <p>The tentacle-fold geometry of the artifact carries patterns that might be described as non-Euclidian script—or are they merely the products of natural crystallization and our tendency to impose meaning on the unknown? This question is essential. The Spiral Claw Fossil invites us to examine the boundary between observation and interpretation, between what we know and what we project. Perhaps this artifact's greatest teaching is not about the culture that created it but about ourselves—about human tendency to seek meaning, to construct narratives, to speak with authority about the unknowable. In that respect, this object is humility made stone.</p>
+                    <h3>Comparative Note</h3>
+                    <p>The Spiral Claw echoes mythic figures found in submerged iconography—fragmentary records from cultures claiming contact with "deep dwellers" or abyssal entities. References appear in the drowned archives of Y'ha-neth and in scattered ethnographic records suggesting deep-sea ritual traditions. However, these parallels must be approached with extreme caution. The temptation to connect isolated artifacts across vast geographic and temporal distances often reveals more about modern preconceptions than about ancient reality.</p>
+                    <h3>Cautionary Note on Interpretation</h3>
+                    <p>The Spiral Claw Fossil represents perhaps the most speculative interpretation in this collection. The absence of cultural continuity, inscribed texts, or living tradition means all claims regarding its purpose remain provisional and grounded primarily in material context and comparative mythology. The nonstandard dating results and the preservation state of soft tissue impressions raise questions we cannot definitively answer. Interpretations offered here are informed hypotheses, not conclusions. Respect is given to the likelihood that this was a sacred or liminal object, and recognition is made of the profound unknowability that surrounds it. Science advances through acknowledgment of uncertainty.</p>
+                    <h3>On Display Courtesy Of</h3>
+                    <p>The Hadopelagic Research Consortium and Deep Trench Exploration Initiative, with archival curation and interpretive narrative by Dr. Francine Bowman, Cultural Historian & Storyweaver.E]</p>
+                    <h3>On Display Courtesy Of</h3>
+                    <p>[PASTE COURTESY NOTE HERE]</p>
+                </div>
+            </div>
+
+            <div class="history-item">
+                <img src="../images/collections/bone-ornament.png" alt="Carved Bone Ornament" class="history-image">
+                <div class="history-content">
+                    <h2>Carved Bone Ornament</h2>
+                    <h3>Artifact Facts</h3>
+                    <p><strong>Material:</strong> Fossilized bone with mineral sediment.</p>
+                    <p><strong>Function:</strong> Personal adornment or ritual pendant.</p>
+                    <p><strong>Location Found:</strong> Ravik Crater Badlands, Sector Theta-9.</p>
+                    <h3>Interpretation</h3>
+                    <p>[PASTE YOUR 400+ WORD EXHIBIT LABEL (MUSEUM STYLE) FOR CARVED BONE ORNAMENT HERE]</p>
+                    <h3>Comparative Note</h3>
+                    <p>[PASTE COMPARATIVE NOTE HERE]</p>
+                    <h3>Cautionary Note on Interpretation</h3>
+                    <p>[PASTE CAUTIONARY NOTE HERE]</p>
+                    <h3>On Display Courtesy Of</h3>
+                    <p>[PASTE COURTESY NOTE HERE]</p>
+                </div>
+            </div>
+
+            <div class="history-item">
+                <img src="../images/collections/ceremonial-vessel.png" alt="Ceremonial Vessel" class="history-image">
+                <div class="history-content">
+                    <h2>Ceremonial Vessel</h2>
+                    <h3>Artifact Facts</h3>
+                    <p><strong>Material:</strong> Hand-thrown terracotta with mineral temper.</p>
+                    <p><strong>Function:</strong> Ritual libation or food offering vessel.</p>
+                    <p><strong>Location Found:</strong> Central ceremonial mound, Sector Delta-12.</p>
+                    <h3>Interpretation</h3>
+                    <p>[PASTE YOUR 400+ WORD EXHIBIT LABEL (MUSEUM STYLE) FOR CEREMONIAL VESSEL HERE]</p>
+                    <h3>Comparative Note</h3>
+                    <p>[PASTE COMPARATIVE NOTE HERE]</p>
+                    <h3>Cautionary Note on Interpretation</h3>
+                    <p>[PASTE CAUTIONARY NOTE HERE]</p>
+                    <h3>On Display Courtesy Of</h3>
+                    <p>[PASTE COURTESY NOTE HERE]</p>
+                </div>
+            </div>
+
+            <p class="history-back"><a href="#" onclick="showSection('archaeology'); return false;">Back to Collections</a></p>
+        </section>
     </main>
 
     <footer>
@@ -496,13 +514,77 @@
         <p>The content and images on this site were conceived by a human and created by AI. The images were created by AI and curated, edited, reviewed, verified, validated, and augmented by a human.</p>
     </footer>
 
-    <script>
-        function showSection(section) {
-            const sections = document.querySelectorAll('.collection-section');
-            sections.forEach(s => s.style.display = 'none');
-            document.getElementById(section).style.display = 'block';
-        }
-    </script>
+        <!-- Modal Shell -->
+        <div class="modal" id="modal" style="display:none" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+            <div class="modal-content">
+                <button class="close-modal" aria-label="Close">x</button>
+                <div id="modal-body"></div>
+            </div>
+        </div>
+
+        <!-- Hidden Modal Content Blocks -->
+        <div class="modal-item" id="modal-text-obsidian-spearhead" hidden>
+            <h2 id="modal-title">Obsidian Spearhead — Collection Note</h2>
+            <div class="modal-meta">
+                <p><strong>Material:</strong> Volcanic glass (obsidian)</p>
+                <p><strong>Function:</strong> Hunting weapon; projectile point</p>
+                <p><strong>Location Found:</strong> Grotto A-7, Vaktari Highlands</p>
+            </div>
+            <p>This gleaming spearhead represents the precision and ritual expertise of an ancient hunter-people. Crafted 12,000 years ago from volcanic obsidian—a material rare in the Vaktari region, suggesting long-distance trade networks—this point embodies mastery. The bilateral symmetry indicates formal training transmitted across generations. Microscopic impact fractures on the tip reveal its fatal strike; hafting residue shows it was once bound to a wooden shaft with sinew and plant fiber. The presence of ochre pigment nearby hints at ritual preparation: Was this point blessed before the hunt? The rarity of obsidian in this landscape suggests it was more than a tool—it was an investment, a valued object, possibly a gift from distant peoples. Its small damage speaks not of carelessness but of hard use in service to community survival and, perhaps, spiritual obligation.</p>
+        </div>
+
+        <div class="modal-item" id="modal-text-marker-arch" hidden>
+            <h2 id="modal-title">Marker Arch Fragment — Collection Note</h2>
+            <div class="modal-meta">
+                <p><strong>Material:</strong> Composite stone (basalt, lunar silicate, fused ash)</p>
+                <p><strong>Function:</strong> Ceremonial or calendrical archway</p>
+                <p><strong>Location Found:</strong> Dorsai Scarp ridgeline above Basin 47-E</p>
+            </div>
+            <p>This precision-cut fragment is all that remains of an engineered archway—a threshold between worlds. At 22,000 years old, it represents technical knowledge that still astounds: composite stone, fused ash, and rare lunar silicate blended into an artificial material. The keystone carries a 7-point symmetrical symbol array, possibly encoding seasons, celestial events, or sacred geometry. Buried beneath windblown basalt on a remote ridgeline, it was not a casual structure but a purpose-built monument. Surrounding evidence—burnt charcoal, obsidian bead fragments, crushed pigment—speaks of ritual activity, perhaps seasonal gatherings or passage rites. The artifact's elevated location and potential horizon alignment suggest it served as a sightline, a marker of sacred geography. Who passed through this archway? What ceremonies honored its threshold? The fragment guards these secrets, yet its existence speaks eloquently of a culture that transformed landscape into ceremony.</p>
+        </div>
+
+        <div class="modal-item" id="modal-text-basalt-blade" hidden>
+            <h2 id="modal-title">Basalt Blade — Collection Note</h2>
+            <div class="modal-meta">
+                <p><strong>Material:</strong> Volcanic basalt</p>
+                <p><strong>Function:</strong> Cutting or processing tool</p>
+                <p><strong>Location Found:</strong> Ravik Crater Badlands, Sector Theta-9</p>
+            </div>
+            <p><strong>Field Analysis (Dr. Isla Raman, Digital Stratigrapher):</strong> This crescent blade was recovered from a compressed silt layer using 3D photogrammetry and stratigraphic mapping. The low-oxygen sediment trap preserved microscopic use-wear—ridge polish consistent with sustained contact processing, likely hide-working or fiber preparation. Associated materials (vertebral fragments, shell shards, calcified flora) indicate a multi-resource lakeside workshop site, circa 18,000 BP. The basalt's micro-crystalline structure and natural fracture planes were deliberately exploited—evidence of geological knowledge transmission.</p>
+            <p><strong>Cultural Interpretation (Dr. Francine Bowman, Storyweaver):</strong> The crescent form optimizes cutting leverage and grip ergonomics—this is engineered tool design, not accident. The spiral ridges, while natural, echo later symbolic associations with cyclical renewal: life-death-rebirth patterns documented across regional cultures. Though we cannot project meaning backward with certainty, the persistent reappearance of such forms across millennia invites reflection on symbolic vocabularies rooted in landscape observation. This blade transforms volcanic stone into testimony of human ingenuity.</p>
+        </div>
+
+        <div class="modal-item" id="modal-text-spiral-claw" hidden>
+            <h2 id="modal-title">Spiral Claw Fossil — Collection Note</h2>
+            <div class="modal-meta">
+                <p><strong>Material:</strong> Fossilized bone and mineral composite</p>
+                <p><strong>Function:</strong> Cult object or guardian marker</p>
+                <p><strong>Location Found:</strong> Kaer thul Rift, Hadopelagic Zone</p>
+            </div>
+            <p>From the deepest trench on Earth emerges this enigmatic form: a 32-centimeter claw, fossilized and perfectly preserved, bearing witness to cultures we cannot name. Lodged upright on a pillow-lava shelf at 10,930 meters depth, it was not dropped carelessly—it was placed. The cephalopod-like head crest, the intricate ribbed patterns, the nonhuman geometry all suggest intentional curation, ritual deposition. Dating efforts failed, anomalous magnetism and crystalline occlusion defeating our instruments, as if the object resists scientific classification. Found alongside radiating stone shards and fossil spiral rings, it speaks of ceremony in absolute darkness. Was it a guardian? A binding? A threshold marker between the living and the abyssal unknown? The tentacle-fold geometry carries non-Euclidian script—or does it? Our interpretations may reveal more about ourselves than about its makers. This artifact is humility made stone.</p>
+        </div>
+
+        <div class="modal-item" id="modal-text-bone-ornament" hidden>
+            <h2 id="modal-title">Carved Bone Ornament — Collection Note</h2>
+            <div class="modal-meta">
+                <p><strong>Material:</strong> Fossilized bone with mineral sediment</p>
+                <p><strong>Function:</strong> Personal adornment or ritual pendant</p>
+                <p><strong>Location Found:</strong> Ravik Crater Badlands, Sector Theta-9</p>
+            </div>
+            <p>[PASTE YOUR 150+ WORD MODAL INTERPRETATION HERE]</p>
+        </div>
+
+        <div class="modal-item" id="modal-text-ceremonial-vessel" hidden>
+            <h2 id="modal-title">Ceremonial Vessel — Collection Note</h2>
+            <div class="modal-meta">
+                <p><strong>Material:</strong> Hand-thrown terracotta</p>
+                <p><strong>Function:</strong> Ritual libation or food offering vessel</p>
+                <p><strong>Location Found:</strong> Central ceremonial mound, Sector Delta-12</p>
+            </div>
+            <p>[PASTE YOUR 150+ WORD MODAL INTERPRETATION HERE]</p>
+        </div>
+
+        <script src="../js/collections.js"></script>
 
 </body>
 </html>
